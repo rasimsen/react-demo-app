@@ -1,3 +1,11 @@
+# React.js - Demo Application for Zero To Hero Training
+
+to create a brand new react.js project:
+
+```
+$ npx create-react-app react-demo-app
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

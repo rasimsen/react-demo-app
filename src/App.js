@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+
+import UserInput from "./UserInput/UserInput";
+import UserOutput from "./UserOutput/UserOutput";
 
 function App() {
+  const [userState, setUserState] = useState({
+    username: "supermax",
+  });
+
+  const usernameChangedHandler = (event) => {
+    setUserState({
+      username: event.target.value,
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hi, I'm a React App</h1>
+      <UserInput
+        changed={usernameChangedHandler}
+        currentName={userState.username}
+      />
+      <UserOutput userName={userState.username} />
+      <UserOutput userName={userState.username} />
+      <UserOutput userName="Max" />
     </div>
   );
 }
